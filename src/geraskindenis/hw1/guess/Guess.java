@@ -23,5 +23,6 @@ public class Guess {
             }
         }
         System.out.println("Ты не угадал");
+        scanner.close();
     }
 }
