@@ -8,7 +8,6 @@ public class Test {
     public static void main(String[] args) throws IOException {
         System.out.println(new Date());
         File dataFile = new Generator().generate("src/geraskindenis/hw3/filesort/data.txt", 375_000_000);
-//        File dataFile = new Generator().generate("src/geraskindenis/hw3/filesort/data.txt", 50_000);
         System.out.println(new Validator(dataFile).isSorted()); // false
         File sortedFile = new Sorter().sortFile(dataFile);
         System.out.println(new Validator(sortedFile).isSorted()); // true

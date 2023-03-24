@@ -12,7 +12,7 @@ public class Sorter {
     private int fileCounter;
 
     public Sorter() {
-        this.MAX_CACHE_IN_BYTE = 1024 * 1024; //1Mb
+        this.MAX_CACHE_IN_BYTE = 1024 * 1024 * 50; //50Mb
     }
 
     public Sorter(int MAX_CACHE_IN_BYTE) {
@@ -43,7 +43,7 @@ public class Sorter {
         File result = sortedFiles.get(0);
         File sortedFile = new File(dataFile.getParent() + "\\sorted_" + dataFile.getName());
         result.renameTo(sortedFile);
-        tmpFolder.delete();
+        tmpFolder.deleteOnExit();
         return sortedFile;
     }
 
@@ -57,9 +57,9 @@ public class Sorter {
                 f2 = listOfSortedFiles.get(i++);
             }
             result.add(mergingTwoFiles(f1, f2));
-            f1.delete();
+            f1.deleteOnExit();
             if (Objects.nonNull(f2)) {
-                f2.delete();
+                f2.deleteOnExit();
             }
         }
 
