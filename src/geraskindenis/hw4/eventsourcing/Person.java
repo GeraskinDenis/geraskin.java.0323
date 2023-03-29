@@ -2,16 +2,17 @@ package geraskindenis.hw4.eventsourcing;
 
 public class Person {
     private Long id;
-    private String name;
+    private String firstName;
     private String lastName;
     private String middleName;
 
-    public Person() {
+    public Person(Long id) {
+        this.id = id;
     }
 
-    public Person(Long id, String name, String lastName, String middleName) {
+    public Person(Long id, String firstName, String lastName, String middleName) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
     }
@@ -24,12 +25,12 @@ public class Person {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -46,5 +47,15 @@ public class Person {
 
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                '}';
     }
 }

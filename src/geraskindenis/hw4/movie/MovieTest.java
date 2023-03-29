@@ -11,11 +11,46 @@ public class MovieTest {
         DataSource dataSource = initDb();
         MovieLoader movieLoader = new MovieLoaderImpl(dataSource);
 
-        File dataFile = new File("movies.csv");
+        File dataFile = new File("src/geraskindenis/hw4/movie/film.csv");
         movieLoader.loadData(dataFile);
 
-        /**
-         * Тут написать в комментариях запрос получения всех
+        /*
+        * Тут написать в комментариях запрос получения всех
+
+         SELECT *
+         FROM movie
+        /////////////////////////////////////////
+         SELECT
+	        id,
+	        year ,
+	        length,
+	        title,
+	        subject,
+	        actors,
+	        actress,
+	        director,
+	        popularity,
+	        awards
+        FROM
+	        movie
+        /////////////////////////////////////////
+        SELECT
+	        subject as SUBJECT,
+	        SUM(1) as COUNT
+        FROM
+	        movie
+	    GROUP BY
+	        subject
+        ORDER BY
+            subject
+        /////////////////////////////////////////
+        SELECT
+            subject as SUBJECT,
+	        COUNT(subject) as COUNT
+        FROM
+	        movie
+        GROUP BY
+        	subject
          */
     }
 

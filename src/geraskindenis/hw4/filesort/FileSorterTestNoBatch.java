@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
 
-public class FileSorterTest {
+public class FileSorterTestNoBatch {
     public static void main(String[] args) throws SQLException, IOException {
-        System.out.println("=== Testing  FileSortImpl ===");
+        System.out.println("=== Testing  FileSortImplNoBatch ===");
         System.out.println("Start : " + new Date());
         DataSource dataSource = initDb();
 //        File data = new File("data.txt");
         File data = new Generator().generate("src/geraskindenis/hw4/filesort/data.txt", 1_000_000);
         System.out.println("File sorted in descending order: " + new Validator(data).isSortedDescending()); // false
-        FileSorter fileSorter = new FileSortImpl(dataSource);
+        FileSorter fileSorter = new FileSortImplNoBatch(dataSource);
         System.out.println("Time before sorting: " + new Date());
         File res = fileSorter.sort(data);
         System.out.println("Time after sorting: " + new Date());
