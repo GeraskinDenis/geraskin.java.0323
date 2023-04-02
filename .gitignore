@@ -52,4 +52,4 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-/src/geraskindenis/hw3/filesort/data.txt
+/src/main/java/io/ylab/intensive/lesson03/filesort/data.txt
