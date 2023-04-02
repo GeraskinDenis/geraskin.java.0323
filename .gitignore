@@ -52,3 +52,4 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/src/geraskindenis/hw3/filesort/data.txt
