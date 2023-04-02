@@ -14,17 +14,18 @@ public class Message {
 
     @Override
     public String toString() {
-        if (command == Command.DELETE)
-            return String.format("%s;%s", command, person.getId());
-        else if (command == Command.SAVE) {
-            return String.format("%s;%s;%s;%s;%s",
+        String result = "";
+        if (command == Command.DELETE) {
+            result = String.format("%s;%s", command, person.getId());
+        } else if (command == Command.SAVE) {
+            result = String.format("%s;%s;%s;%s;%s",
                     command,
                     person.getId(),
                     person.getFirstName(),
                     person.getLastName(),
                     person.getMiddleName());
         }
-        return "";
+        return result;
     }
 
     public byte[] getBytes() {
